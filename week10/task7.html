@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 7</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 2px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #2d8ca7;
+            color: white;
+        }
+        .even { background-color: #e0e8eb; }
+        .odd { background-color: #f8f8f8; }
+    </style>
+</head>
+<body>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>S.N.</th>
+                <th>Name</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const data = [
+            { sn: 1, name: "Name 1", image: "1.jpg" },
+            { sn: 2, name: "Name 2", image: "2.jpg" },
+            { sn: 3, name: "Name 3", image: "3.jpg" },
+            { sn: 4, name: "Name 4", image: "4.jpg" },
+            { sn: 5, name: "Name 5", image: "5.jpg" },
+        ];
+
+        document.querySelector("#dataTable tbody").innerHTML = data.map((d, i) 
+            `<tr class="${i % 2 === 0 ? 'odd' : 'even'}">
+                <td>${d.sn}</td>
+                <td>${d.name}</td>
+                <td><img src="${d.image}" width="30"></td>
+            </tr>`
+        ).join("");
+    </script>
+
+</body>
+</html>

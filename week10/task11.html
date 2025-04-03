@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <title>TASk 11</title>
+</head>
+
+<body>
+    <input type="text" id="hora"></input>
+    <input type="button" id="honi" value="Add" onclick="add_element_array();"></input>
+    <input type="button" id="kinahoni" value="Display" onclick="display_element_array();"></input>
+    <div id="seeslcresult"></div>
+    <script>
+        var i = 0;
+        var array = Array();
+        function add_element_array() {
+            array[i] = document.getElementById("hora").value;
+            alert("Element: " + array[i] + " Added to thr database " + i);
+            i++;
+            document.getElementById("hora").value = "";
+        }
+        function display_element_array() {
+            var x = "<hr/>";
+
+            for (var j = 0; j < array.length; j++) {
+                x += "Element " + j + " = " + array[j] + "<br/>";
+            }
+            document.getElementById("seeslcresult").innerHTML = x;
+        }
+    </script>
+</body>
+
+</html>
